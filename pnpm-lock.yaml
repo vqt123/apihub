@@ -7,6 +7,11 @@ settings:
 onlyBuiltDependencies:
   - esbuild
 
+dependencies:
+  redis:
+    specifier: ^4.7.0
+    version: 4.7.0
+
 devDependencies:
   '@eslint/compat':
     specifier: ^1.2.5
@@ -26,6 +31,9 @@ devDependencies:
   '@tailwindcss/vite':
     specifier: ^4.0.0
     version: 4.0.12(vite@6.2.1)
+  '@types/node':
+    specifier: ^22.13.10
+    version: 22.13.10
   eslint:
     specifier: ^9.18.0
     version: 9.22.0
@@ -64,7 +72,7 @@ devDependencies:
     version: 8.26.0(eslint@9.22.0)(typescript@5.8.2)
   vite:
     specifier: ^6.0.0
-    version: 6.2.1
+    version: 6.2.1(@types/node@22.13.10)
 
 packages:
 
@@ -444,6 +452,55 @@ packages:
     resolution: {integrity: sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==}
     dev: true
 
+  /@redis/bloom@1.2.0(@redis/client@1.6.0):
+    resolution: {integrity: sha512-HG2DFjYKbpNmVXsa0keLHp/3leGJz1mjh09f2RLGGLQZzSHpkmZWuwJbAvo3QcRY8p80m5+ZdXZdYOSBLlp7Cg==}
+    peerDependencies:
+      '@redis/client': ^1.0.0
+    dependencies:
+      '@redis/client': 1.6.0
+    dev: false
+
+  /@redis/client@1.6.0:
+    resolution: {integrity: sha512-aR0uffYI700OEEH4gYnitAnv3vzVGXCFvYfdpu/CJKvk4pHfLPEy/JSZyrpQ+15WhXe1yJRXLtfQ84s4mEXnPg==}
+    engines: {node: '>=14'}
+    dependencies:
+      cluster-key-slot: 1.1.2
+      generic-pool: 3.9.0
+      yallist: 4.0.0
+    dev: false
+
+  /@redis/graph@1.1.1(@redis/client@1.6.0):
+    resolution: {integrity: sha512-FEMTcTHZozZciLRl6GiiIB4zGm5z5F3F6a6FZCyrfxdKOhFlGkiAqlexWMBzCi4DcRoyiOsuLfW+cjlGWyExOw==}
+    peerDependencies:
+      '@redis/client': ^1.0.0
+    dependencies:
+      '@redis/client': 1.6.0
+    dev: false
+
+  /@redis/json@1.0.7(@redis/client@1.6.0):
+    resolution: {integrity: sha512-6UyXfjVaTBTJtKNG4/9Z8PSpKE6XgSyEb8iwaqDcy+uKrd/DGYHTWkUdnQDyzm727V7p21WUMhsqz5oy65kPcQ==}
+    peerDependencies:
+      '@redis/client': ^1.0.0
+    dependencies:
+      '@redis/client': 1.6.0
+    dev: false
+
+  /@redis/search@1.2.0(@redis/client@1.6.0):
+    resolution: {integrity: sha512-tYoDBbtqOVigEDMAcTGsRlMycIIjwMCgD8eR2t0NANeQmgK/lvxNAvYyb6bZDD4frHRhIHkJu2TBRvB0ERkOmw==}
+    peerDependencies:
+      '@redis/client': ^1.0.0
+    dependencies:
+      '@redis/client': 1.6.0
+    dev: false
+
+  /@redis/time-series@1.1.0(@redis/client@1.6.0):
+    resolution: {integrity: sha512-c1Q99M5ljsIuc4YdaCwfUEXsofakb9c8+Zse2qxTadu8TalLXuAESzLvFAvNVbkmSlvlzIQOLpBCmWI9wTOt+g==}
+    peerDependencies:
+      '@redis/client': ^1.0.0
+    dependencies:
+      '@redis/client': 1.6.0
+    dev: false
+
   /@rollup/rollup-android-arm-eabi@4.35.0:
     resolution: {integrity: sha512-uYQ2WfPaqz5QtVgMxfN6NpLD+no0MYHDBywl7itPYd3K5TjjSghNKmX8ic9S8NU8w81NVhJv/XojcHptRly7qQ==}
     cpu: [arm]
@@ -616,7 +673,7 @@ packages:
       set-cookie-parser: 2.7.1
       sirv: 3.0.1
       svelte: 5.22.6
-      vite: 6.2.1
+      vite: 6.2.1(@types/node@22.13.10)
     dev: true
 
   /@sveltejs/vite-plugin-svelte-inspector@4.0.1(@sveltejs/vite-plugin-svelte@5.0.3)(svelte@5.22.6)(vite@6.2.1):
@@ -630,7 +687,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 5.0.3(svelte@5.22.6)(vite@6.2.1)
       debug: 4.4.0
       svelte: 5.22.6
-      vite: 6.2.1
+      vite: 6.2.1(@types/node@22.13.10)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -648,7 +705,7 @@ packages:
       kleur: 4.1.5
       magic-string: 0.30.17
       svelte: 5.22.6
-      vite: 6.2.1
+      vite: 6.2.1(@types/node@22.13.10)
       vitefu: 1.0.6(vite@6.2.1)
     transitivePeerDependencies:
       - supports-color
@@ -776,7 +833,7 @@ packages:
       '@tailwindcss/oxide': 4.0.12
       lightningcss: 1.29.2
       tailwindcss: 4.0.12
-      vite: 6.2.1
+      vite: 6.2.1(@types/node@22.13.10)
     dev: true
 
   /@types/cookie@0.6.0:
@@ -789,6 +846,12 @@ packages:
 
   /@types/json-schema@7.0.15:
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
+    dev: true
+
+  /@types/node@22.13.10:
+    resolution: {integrity: sha512-I6LPUvlRH+O6VRUqYOcMudhaIdUVWfsjnZavnsraHvpBwaEyMN29ry+0UVJhImYL16xsscu0aske3yA+uPOWfw==}
+    dependencies:
+      undici-types: 6.20.0
     dev: true
 
   /@typescript-eslint/eslint-plugin@8.26.0(@typescript-eslint/parser@8.26.0)(eslint@9.22.0)(typescript@5.8.2):
@@ -999,6 +1062,11 @@ packages:
     resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
     dev: true
+
+  /cluster-key-slot@1.1.2:
+    resolution: {integrity: sha512-RMr0FhtfXemyinomL4hrWcYJxmX6deFdCxpJzhDttxgO1+bcCnkk+9drydLVDmAMG7NE6aN/fl4F7ucU/90gAA==}
+    engines: {node: '>=0.10.0'}
+    dev: false
 
   /color-convert@2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
@@ -1344,6 +1412,11 @@ packages:
     os: [darwin]
     dev: true
     optional: true
+
+  /generic-pool@3.9.0:
+    resolution: {integrity: sha512-hymDOu5B53XvN4QT9dBmZxPX4CWhBPPLguTZ9MMFeFa/Kg0xWVfylOVNlJji/E7yTZWFd/q9GO5TxDLq156D7g==}
+    engines: {node: '>= 4'}
+    dev: false
 
   /glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
@@ -1850,6 +1923,17 @@ packages:
     engines: {node: '>= 14.18.0'}
     dev: true
 
+  /redis@4.7.0:
+    resolution: {integrity: sha512-zvmkHEAdGMn+hMRXuMBtu4Vo5P6rHQjLoHftu+lBqq8ZTA3RCVC/WzD790bkKKiNFp7d5/9PcSD19fJyyRvOdQ==}
+    dependencies:
+      '@redis/bloom': 1.2.0(@redis/client@1.6.0)
+      '@redis/client': 1.6.0
+      '@redis/graph': 1.1.1(@redis/client@1.6.0)
+      '@redis/json': 1.0.7(@redis/client@1.6.0)
+      '@redis/search': 1.2.0(@redis/client@1.6.0)
+      '@redis/time-series': 1.1.0(@redis/client@1.6.0)
+    dev: false
+
   /resolve-from@4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
     engines: {node: '>=4'}
@@ -2066,6 +2150,10 @@ packages:
     hasBin: true
     dev: true
 
+  /undici-types@6.20.0:
+    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
+    dev: true
+
   /uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
     dependencies:
@@ -2076,7 +2164,7 @@ packages:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
 
-  /vite@6.2.1:
+  /vite@6.2.1(@types/node@22.13.10):
     resolution: {integrity: sha512-n2GnqDb6XPhlt9B8olZPrgMD/es/Nd1RdChF6CBD/fHW6pUyUTt2sQW2fPRX5GiD9XEa6+8A6A4f2vT6pSsE7Q==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
@@ -2116,6 +2204,7 @@ packages:
       yaml:
         optional: true
     dependencies:
+      '@types/node': 22.13.10
       esbuild: 0.25.0
       postcss: 8.5.3
       rollup: 4.35.0
@@ -2131,7 +2220,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 6.2.1
+      vite: 6.2.1(@types/node@22.13.10)
     dev: true
 
   /which@2.0.2:
@@ -2146,6 +2235,10 @@ packages:
     resolution: {integrity: sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /yallist@4.0.0:
+    resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
+    dev: false
 
   /yaml@1.10.2:
     resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==}
